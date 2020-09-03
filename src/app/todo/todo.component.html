@@ -1,0 +1,31 @@
+<section class="main__todolist">
+  <h1 class="main__title">To do list App</h1>
+  <form class="main__form">
+    <input type="text" #itemTitle>
+    <button type="button" (click)="onAdd(itemTitle)">Add task</button>
+  </form>
+  <section class="main__todo">
+    <h2>To do</h2>
+    <ul>
+      <p *ngFor="let item of toDoListArray">
+        <li *ngIf="item.isChecked === false">
+          <input type="checkbox" [class.text-success]="item.isChecked" (click)="alterCheck(item.$key,item.isChecked)">
+          <button type="button" (click)="onDelete(item.$key)">X</button>
+          {{ item.title }}
+        </li>
+      </p>
+    </ul>
+  </section>
+  <section class="main__doing">
+    <h2>Doing</h2>
+    <ul>
+      <p *ngFor="let item of toDoListArray">
+        <li *ngIf="item.isChecked === true">
+          <input type="checkbox" [class.text-success]="item.isChecked" (click)="alterCheck(item.$key,item.isChecked)" checked>
+          <button type="button" (click)="onDelete(item.$key)">X</button>
+          {{ item.title }}
+        </li>
+      </p>
+    </ul>
+  </section>
+</section>

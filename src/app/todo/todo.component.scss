@@ -1,0 +1,25 @@
+.main {
+  &__title {
+    font-size: 30px;
+    text-align: center;
+    font-family: monospace;
+    color: #fff;
+  }
+
+  &__form {
+    text-align: center;
+  }
+
+  &__todo,
+  &__doing {
+    color: #fff;
+    font-family: monospace;
+    padding-left: 20px;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-transform: capitalize;
+    }
+  }
+}
